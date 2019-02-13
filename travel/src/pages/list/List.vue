@@ -1,15 +1,14 @@
 <template>
   <div>
-    <router-view/>
+    <h1>list</h1>
+    <div>
+      content
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'List'
 }
 </script>
-
-<style>
-
-</style>

@@ -1,15 +1,11 @@
 <template>
   <div>
-    <router-view/>
+    <h1>home</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Home'
 }
 </script>
-
-<style>
-
-</style>
