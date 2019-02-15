@@ -5,12 +5,16 @@ import App from './App'
 import router from './router'
 // 防止移动端有300ms的延时
 import fastClick from 'fastclick'
+// 轮播图
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({
