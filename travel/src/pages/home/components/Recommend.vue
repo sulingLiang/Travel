@@ -46,7 +46,7 @@ export default {
     padding: .2rem
     text-indent: .2rem
     font-size: .32rem
-    background: #ecdddd
+    background: #e8e6e6
   .item
     overflow: hidden
     display: flex
