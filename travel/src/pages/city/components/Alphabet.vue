@@ -1,19 +1,20 @@
 <template>
   <div class="list">
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
+    <div class="item" v-for="(item, key) in cities" :key="key" @click="handleLetterClick">{{key}}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CityAlphabet'
+  name: 'CityAlphabet',
+  props: {
+    cities: Object
+  },
+  methods: {
+    handleLetterClick (e) {
+      this.$emit('change', e.target.innerText)
+    }
+  }
 }
 </script>
 
@@ -32,4 +33,5 @@ export default {
     justify-content: center
     .item
       color: $bgColor
+      padding: .05rem
 </style>
