@@ -9,6 +9,7 @@
           class="search-item border-bottom"
           v-for="item of list"
           :key="item.id"
+          @click="handleCityClick(item.name)"
         >
           {{item.name}}
         </li>
@@ -58,6 +59,12 @@ export default {
         }
         this.list = result
       }, 100)
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   mounted () {
