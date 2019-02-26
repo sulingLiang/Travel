@@ -1,19 +1,40 @@
 <template>
-  <div class="banner">
-    <img class="banner-img" src="http://img1.qunarzz.com/wugc/p189/201206/12/a3ace34bc010041193835fbb.jpg_600x330_944cd8e9.jpg" alt="">
-    <div class="banner-info">
-      <div class="banner-title">南山文化旅游区(AAAAA景区)</div>
-      <div class="banner-number">
-        <span class="iconfont banner-icon">&#xe62e;</span>
-        25
+  <div>
+    <div class="banner" @click="handleBannerClick">
+      <img class="banner-img" src="http://img1.qunarzz.com/wugc/p189/201206/12/a3ace34bc010041193835fbb.jpg_600x330_944cd8e9.jpg" alt="">
+      <div class="banner-info">
+        <div class="banner-title">南山文化旅游区(AAAAA景区)</div>
+        <div class="banner-number">
+          <span class="iconfont banner-icon">&#xe62e;</span>
+          25
+        </div>
       </div>
     </div>
+    <common-gallary v-show="swiperStatus" @close="handleGallaryClose"></common-gallary>
   </div>
 </template>
 
 <script>
+import CommonGallary from 'common/Gallary'
+
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  components: {
+    CommonGallary
+  },
+  data () {
+    return {
+      swiperStatus: false
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.swiperStatus = true
+    },
+    handleGallaryClose () {
+      this.swiperStatus = false
+    }
+  }
 }
 </script>
 
